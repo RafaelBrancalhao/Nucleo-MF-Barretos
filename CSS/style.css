@@ -537,6 +537,11 @@ img {
     text-transform: uppercase;
 }
 
+.feature-image-wrap {
+    position: relative;
+    padding-bottom: 28px;
+}
+
 /*.feature-image-wrap::after {
     content: "";
     position: absolute;
@@ -581,6 +586,17 @@ img {
     height: 2px;
     display: inline-block;
     background: #0f8a69;
+}
+
+.eyebrow-line2 {
+    position: relative;
+    content: "";
+    left: 21px;
+    bottom: 42px;
+    width: 68%;
+    height: 26px;
+    background: #0f8a69;
+    z-index: 0;
 }
 
 h2 em {
@@ -628,4 +644,94 @@ h2 em {
     line-height: 1.45;
     letter-spacing: .08em;
     text-transform: uppercase;
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE (MOBILE) --- */
+
+@media (max-width: 768px) {
+    /* 1. Header e Navegação */
+    header .topline {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+
+    header .container {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    /* 2. Seção Hero (Principal) */
+    .maindiv {
+        grid-template-columns: 1fr; /* Muda de 2 colunas para 1 */
+        gap: 40px;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        text-align: center;
+        font-size: 2.8rem; /* Tamanho mais legível para celular */
+    }
+
+    .herobot {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .buttonnuc {
+        margin-right: 0 !important; /* Remove a margem lateral */
+    }
+
+    .buttonaulas {
+        margin-right: 0 !important; /* CORREÇÃO CRÍTICA: remove os 250px que quebram o site */
+        bottom: 0 !important;
+    }
+
+    .hero-note {
+        justify-self: center;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    /* 3. Seção O Núcleo (Intro) */
+    .intro-grid {
+        grid-template-columns: 1fr; /* Empilha os elementos */
+        gap: 30px;
+    }
+
+    .intro-aside {
+        padding-top: 20px;
+    }
+
+    /* 4. Seção Clínica e Território (Features) */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .feature-stats {
+        grid-template-columns: 1fr; /* Números um abaixo do outro */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .feature-stats div {
+        align-items: center;
+    }
 }
