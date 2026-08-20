@@ -82,6 +82,15 @@ nav a {
     font-weight: 600;
 }
 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
 .maindiv {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 300px;
@@ -640,7 +649,7 @@ h2 em {
 .feature-stats span {
     color: #526174;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 10px;
+    font-size: 8px;
     line-height: 1.45;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -735,3 +744,109 @@ h2 em {
         align-items: center;
     }
 }
+
+/* --- AJUSTES DE RESPONSIVIDADE (MOBILE) --- */
+
+.agenda-section {
+    background: #fbfaf6;
+}
+
+.section-pad {
+    padding: 120px 0;
+}
+
+.section-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 57px;
+}
+
+.agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.section-heading-row h2 {
+    max-width: 620px;
+}
+
+.info-card {
+    min-height: 330px;
+    padding: 27px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-card-blue {
+    color: #fff;
+    background: #0b1f4b;
+}
+
+.info-card-sand {
+    color: #0b1f4b;
+    background: #f1ecdf;
+}
+
+.info-card-green {
+    color: #0b1f4b;
+    background: #dff4e9;
+}
+
+.note-label, .card-index {
+    display: block;
+    color: #0f8a69;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.info-card-blue .card-index, .info-card-blue .card-topline svg {
+    color: #8fe0be;
+}
+
+.heading-note {
+    max-width: 280px;
+    margin: 0 0 4px;
+    color: #526174;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.info-card h3 {
+    margin: 63px 0 12px;
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.info-card p {
+    max-width: 250px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.65;
+    opacity: .78;
+}
+
+.card-detail {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: auto;
+    color: #98e4c5;
+    font-size: 12px;
+    font-weight: 700;
+}
+
