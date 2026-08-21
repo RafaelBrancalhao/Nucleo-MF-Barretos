@@ -12,8 +12,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -29,9 +27,11 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
+    margin: 0;
+    background: #dff4e9;
+    color: #0b1f4b;
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 div {
@@ -850,3 +850,125 @@ h2 em {
     font-weight: 700;
 }
 
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 10px 13px 0 rgba(11, 31, 75, .08);
+}
+
+.classes-section {
+    color: #fff;
+    background: #0b1f4b;
+    padding: 100px 0;
+    position: relative;
+}  
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+    gap: 90px;
+    align-items: center;
+}
+
+.classes-copy h2 {
+    color: #fff;
+    max-width: 460px;
+    margin-bottom: 22px;
+}
+
+.classes-copy > p:not(.eyebrow) {
+    max-width: 390px;
+    color: rgba(255, 255, 255, .68);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.button-light {
+    margin-top: 29px;
+    color: #0b1f4b;
+    background: #fff;
+}
+
+.button-light:hover {
+    background: #dff4e9;
+}
+
+.buttonnuc:hover {
+    background: #d9f5e9;
+}
+
+#insta:hover {
+    background: #0b1f4b
+}
+
+.buttonaulas:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, .17);
+}
+
+.light-kicker {
+    color: #8fe0be;
+}
+
+.classes-media img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.75);
+    transition: transform 500ms cubic-bezier(.23, 1, .32, 1), filter 500ms ease;
+}
+
+.classes-media:hover img {
+    transform: scale(1.04);
+    filter: saturate(1);
+}
+
+.media-label {
+    position: relative;
+    z-index: 2;
+    left: 22px;
+    bottom: 100px;
+    color: #fff;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.play-badge {
+    position: relative;
+    z-index: 2;
+    bottom: 120px;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+    color: #0b1f4b;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.classes-media:hover .play-badge {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: #dff4e9;
+}
+
+.classes-media {
+    text-decoration: none;
+}
+
+.card-link {
+    text-decoration: none;
+} 
+
+.text-link {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
