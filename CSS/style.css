@@ -162,6 +162,17 @@ header .container {
 
 .main-nav > a {
     transition: color 180ms ease, transform 180ms ease;
+    cursor: pointer;
+}
+
+.main-nav > a:hover {
+    color: #0d47a1;
+    transform: translateY(-1px);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .logo {
@@ -997,7 +1008,7 @@ h2 em {
     position: relative;
     z-index: 2;
     left: 22px;
-    bottom: 100px;
+    bottom: 35px;
     color: #fff;
     font-family: "IBM Plex Mono", monospace;
     font-size: 9px;
@@ -1027,7 +1038,10 @@ h2 em {
 }
 
 .classes-media {
-    text-decoration: none;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .card-link {
@@ -1136,15 +1150,24 @@ main {
 }
 
 .menu-toggle {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid #ced8d8;
-    color: #0b1f4b;
-    background: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #0b1f4b;
+  cursor: pointer;
 }
+
+.menu-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
 
 @media (max-width: 700px) {
     .menu-toggle {
@@ -1154,7 +1177,15 @@ main {
 
 .contact-section {
     background: #fbfaf6;
+    width: 100%;
+    overflow: hidden;
 }
+
+.contact-section .shell {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
 
 .section-pad {
     padding: 120px 0;
@@ -1165,10 +1196,10 @@ main {
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    gap: 110px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(2rem, 7vw, 7rem);
 }
 
 .contact-list {
@@ -1279,3 +1310,140 @@ main {
     }
 }
 
+/* teste de responsividade */
+
+.contact-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contact-section .shell {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.contact-heading,
+.contact-list,
+.contact-item {
+  min-width: 0;
+}
+
+.contact-heading h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.98;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0;
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 84px;
+  padding: 1rem 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-item > *:last-child {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .main-nav {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem;
+    background: #f7f5ef;
+    box-shadow: 0 14px 32px rgb(11 31 75 / 16%);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 0.75rem;
+  }
+
+  .main-nav .nav-cta {
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+
+  .contact-section.section-pad {
+    padding-block: clamp(3.5rem, 12vw, 6rem);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(2.35rem, 11vw, 4rem);
+  }
+
+  .contact-list {
+    width: 100%;
+  }
+
+  .contact-item {
+    min-height: 76px;
+    padding-block: 1.1rem;
+  }
+
+  .classes-media > img {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-section .shell {
+    width: min(100% - 1.5rem, 1200px);
+  }
+
+  .contact-item {
+    gap: 0.75rem;
+  }
+
+  .contact-item strong,
+  .contact-item span {
+    overflow-wrap: anywhere;
+  }
+
+  .classes-media > img {
+    min-height: 210px;
+  }
+}
